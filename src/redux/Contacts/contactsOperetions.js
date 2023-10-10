@@ -3,16 +3,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://65245b3bea560a22a4e9c96d.mockapi.io';
 
-// export const fetchContacts = () => async dispatch => {
-//   dispatch(fetchingInProgress());
-//   try {
-//     const response = await axios.get('/contacts');
-//     dispatch(fetchingSuccess(response.data));
-//   } catch (e) {
-//     dispatch(fetchingError(e.message));
-//   }
-// };
-
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
   async () => {
@@ -35,6 +25,16 @@ export const deleteContact = createAsyncThunk(
     return response.data;
   }
 );
+
+// export const fetchContacts = () => async dispatch => {
+//   dispatch(fetchingInProgress());
+//   try {
+//     const response = await axios.get('/contacts');
+//     dispatch(fetchingSuccess(response.data));
+//   } catch (e) {
+//     dispatch(fetchingError(e.message));
+//   }
+// };
 
 // export const postContact = contact => async dispatch => {
 //   const response = await axios.post('/contacts', contact);
